@@ -1,5 +1,8 @@
 :root {
-    --body-bg-color: white;
-    --text-color: black;
+    --body-bg-color: #95e1d3;
+    --text-color: #111111;
     --main-font:  "Georgia", sans-serif;
+    --green-light:#bdece3;
+    --green-dark:#6dd6c2;
+    --grey-color:#2a2a2a;
 }
