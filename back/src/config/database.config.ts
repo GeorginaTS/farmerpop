@@ -2,8 +2,8 @@ import { registerAs } from '@nestjs/config';
 
 export default registerAs('db', () => ({
   type: 'mysql',
-  entities: ['dist/**/*.entity.js'],
-  synchronize: true,
+  entities: ['dist/**/**.entity{.ts,.js}'],
+  synchronize: false,
   host: process.env.DB_HOST || 'localhost',
   port: process.env.DB_PORT || 3306,
   username: process.env.DB_USER || 'root',
