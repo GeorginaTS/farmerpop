@@ -1,8 +1,5 @@
 @import url(./styles/variables.css);
 
-* {
- padding: 0;
-}
 body {
   border: 1px solid blueviolet;
   background-color: var(--body-bg-color);
@@ -14,7 +11,6 @@ body {
   scrollbar-width: none; */
   padding: 0;
   margin: 0;
-
 }
 ul {
   display:flex;
@@ -38,4 +34,7 @@ p {
   margin: 20px;
   text-align: center;
 }
-
+a {
+  color: inherit; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */
+}

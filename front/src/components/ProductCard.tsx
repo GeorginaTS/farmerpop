@@ -1,5 +1,6 @@
-import React from 'react'
+import styles from '../styles/components/ProductCard.module..css'
 
+import { Card } from 'react-bootstrap'
 
 export interface ProductCardProps {
     title: string,
@@ -8,9 +9,9 @@ export interface ProductCardProps {
 
 export const ProductCard = ({ title, price }: ProductCardProps)=> {
   return (
-    <div>      
-    <p className='fw-bold'>{title}</p>
-    <p className='fw-semibold'>{price}€</p>
-    </div>
+    <Card className={styles.card}>      
+      <h4 className='fw-bold'>{title}</h4>
+      <p className='fw-semibold'>{price}€</p>
+    </ Card>
   )
 }

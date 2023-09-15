@@ -1,11 +1,7 @@
 .container { border: 1px solid red;
+    background:blue;
     padding: 20px;
     list-style: none;
     background-color: white;
     height: 90vh;
-  }
-  .list {
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
