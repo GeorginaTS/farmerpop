@@ -20,7 +20,7 @@ function App() {
           <Route path="/home" element={<HomePage />} />
           <Route path="/search" element={<SearchPage />} />
           <Route path="/addproduct" element={<AddProductPage />} />
-          <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/profile/:id" element={<ProfilePage />} />
           <Route path="/product/:id" element={<ProductPage />} />
         </Routes>
         <NavbarBottom />
@@ -28,5 +28,4 @@ function App() {
     </>
   );
 }
-
 export default App;

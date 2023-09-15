@@ -25,7 +25,7 @@ export const NavbarBottom = () => {
         </Nav.Item>
 
         <Nav.Item as='li'>
-          <Nav.Link href='/profile'>
+          <Nav.Link href='/profile/1'>
             <PersonCircle className={styles.icon} />
           </Nav.Link>
         </Nav.Item>

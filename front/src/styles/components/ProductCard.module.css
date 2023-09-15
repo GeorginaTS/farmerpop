@@ -1,9 +1,11 @@
 
 .card {
     border: 1px solid var(--grey-color);
-    margin:1vw;
-    padding:10px;
+    margin:2vw;
+    padding:2vw;
     background-color: var(--body-bg-color);
     border-radius: 6px;
-    width: 90vw;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
   }

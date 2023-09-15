@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
-import { Container } from 'react-bootstrap'
+import { Container, Row } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 import {ProductCard} from '../components/ProductCard'
@@ -42,8 +42,11 @@ export const HomePage = () => {
   }
 
   return (
-    <Container className={styles.container}><br></br>
-      <h2>Troba productes frescos al teu coltant, aqui una llista dels més pròxims</h2>
+    <Container className={styles.container} ><br></br>
+      <Row>
+        <h2>Troba productes frescos al teu voltant, aqui una llista dels més pròxims</h2>
+      </Row>
+      <Row>
       <div className={styles.list}>
         {products.map((product, i) => (
           <div key={i} >
@@ -56,6 +59,7 @@ export const HomePage = () => {
           </div>
         ))}
       </div>
+      </Row>
     
     
     </Container>

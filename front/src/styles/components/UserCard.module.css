@@ -1,0 +1,6 @@
+.card {
+    color:var(--green-light); 
+    padding:10px;
+    background-color: var(--grey-color);
+    border-radius: 5px;
+  }

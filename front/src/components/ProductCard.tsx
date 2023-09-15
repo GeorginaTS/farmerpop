@@ -10,8 +10,8 @@ export interface ProductCardProps {
 export const ProductCard = ({ title, price }: ProductCardProps)=> {
   return (
     <Card className={styles.card}>      
-      <h4 className='fw-bold'>{title}</h4>
-      <p className='fw-semibold'>{price}€</p>
+      <h4>{title}</h4>
+      <h5>{price}€</h5>
     </ Card>
   )
 }

@@ -18,11 +18,10 @@ export class UserService {
 
   async create(createUserDto: CreateUserDto) {
     return this.userRepository.save(createUserDto);
-    // return 'post del espacio';
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} user`;
+    return this.userRepository.findOne({ where: { id } });
   }
 
   update(id: number, updateUserDto: UpdateUserDto) {

@@ -1,8 +1,9 @@
 import axios from 'axios'
-import { Container } from 'react-bootstrap'
+import { Container, Row } from 'react-bootstrap'
 import styles from '../styles/pages/ProductPage.module.css'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
+import { UserCard } from '../components/UserCard'
 
 export const ProductPage = () => {
   const { id } = useParams() 
@@ -41,8 +42,12 @@ export const ProductPage = () => {
   }
   return (
     <Container className={styles.container}>
-    <h1>ProductPage { id }</h1>
-    <p>{product.title}</p>
+      <Row>
+        <h2>{product.title}</h2>
+        <p>{product.description}</p>
+        <p>Preu: {product.price}€</p>
+      </Row>
+      <Link to={`/profile/${product.user_id}`}><UserCard user={product.user_id} /></ Link>
     </Container>
   )
 }

@@ -1,13 +1,16 @@
 
-import { Container } from "react-bootstrap"
-import  styles from '../styles/pages/ProfilePAge.module.css'
-import axios from "axios"
-import { useState, useEffect } from "react"
-import { Link, useParams } from "react-router-dom"
+import axios from 'axios'
+import { useState, useEffect } from 'react'
+import { Button, Card } from 'react-bootstrap'
 
-export const ProfilePage = () => {
-  const { id } = useParams() 
-  const [user, setUser] = useState<any>([])
+import styles from '../styles/components/UserCard.module.css'
+
+export interface UserCardProps {
+    user: number,
+}
+export const UserCard = ({ user }: UserCardProps) => {
+    
+  const [userDetail, setUserDetail] = useState<any>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
@@ -15,13 +18,13 @@ export const ProfilePage = () => {
     const fetchUser = async () => {
       try {
         const config = {
-          url:`http://localhost:3000/user/${id}`,
+          url:`http://localhost:3000/user/${user}`,
           method:'GET'
         }
-        console.log(id)
+        console.log(user)
         const response = await axios(config)
       
-        setUser(response.data)
+        setUserDetail(response.data)
         setLoading(false)
 
       } catch (error) {
@@ -41,11 +44,11 @@ export const ProfilePage = () => {
     return <div className='error-messages'>Something went wrong: {error}</div>
   }
   return (
-    <>
-    <Container className={styles.container}>
-    <h1>Benvingut {user.name}</h1>
-      
-    </Container>
-    </>
+    <Card className={styles.card}>  
+    {userDetail.name}    
+   <hr />
+    <Button>Contactar</Button>
+    
+  </ Card>
   )
 }
