@@ -1,15 +1,41 @@
 @import url(./styles/variables.css);
 
-
+* {
+ padding: 0;
+}
 body {
-  /* border: 1px solid pink; */
+  border: 1px solid blueviolet;
   background-color: var(--body-bg-color);
   font-family: var(--main-font);
   color: var(--text-color);
   width: 100%;
+  overflow-x: hidden;
+  /* -ms-overflow-style: none;
+  scrollbar-width: none; */
+  padding: 0;
+  margin: 0;
+
+}
+ul {
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+}
+li {
+  list-style: none;
+}
+h1 {
+  font-size: 2rem;
+  color: var(--grey-color);
 }
 
-.icon {
-  color: #3e3e3e;
-  font-size: 20px !important;
+p {
+  font-size: 1rem;
+  color: var(--grey-color);
 }
+.error-messages{
+  font-weight: bold;
+  margin: 20px;
+  text-align: center;
+}
+
