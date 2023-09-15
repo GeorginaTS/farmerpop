@@ -5,9 +5,7 @@ import { Link } from 'react-router-dom'
 
 import {ProductCard} from '../components/ProductCard'
 
-import  styles from '../styles/pages/HomePage.module.css'
-
-
+import styles from '../styles/pages/HomePage.module.css'
 
 export const HomePage = () => {
   const [products, setProducts] = useState<any[]>([])
@@ -27,7 +25,7 @@ export const HomePage = () => {
         setLoading(false)
 
       } catch (error) {
-        setError('Failed to connect to server :(')
+        setError('Failed to Fetch:(')
         setLoading(false)
       }
     }
@@ -40,7 +38,7 @@ export const HomePage = () => {
   }
   if (error) {
     // Display error message
-    return <div className='error-messages'>Something went wrong: {error}</div>
+    return <div className='error-messages'> {error}</div>
   }
 
   return (

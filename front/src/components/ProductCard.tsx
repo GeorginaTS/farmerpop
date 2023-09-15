@@ -1,4 +1,4 @@
-import styles from '../styles/components/ProductCard.module..css'
+import styles from '../styles/components/ProductCard.module.css'
 
 import { Card } from 'react-bootstrap'
 

@@ -6,15 +6,15 @@ import { useState, useEffect } from 'react'
 
 export const ProductPage = () => {
   const { id } = useParams() 
-  const [products, setProducts] = useState<any>([])
+  const [product, setProducts] = useState<any>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
-    const fetchProducts = async () => {
+    const fetchProduct = async () => {
       try {
         const config = {
-          url:`http://localhost:3000/product`,
+          url:`http://localhost:3000/product/${id}`,
           method:'GET'
         }
         console.log(id)
@@ -28,7 +28,7 @@ export const ProductPage = () => {
         setLoading(false)
       }
     }
-    fetchProducts()
+    fetchProduct()
   }, [])
 
   if (loading) {
@@ -42,7 +42,7 @@ export const ProductPage = () => {
   return (
     <Container className={styles.container}>
     <h1>ProductPage { id }</h1>
-    <p></p>
+    <p>{product.title}</p>
     </Container>
   )
 }
