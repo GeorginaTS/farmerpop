@@ -16,12 +16,16 @@ export class UserService {
     // return 'soy espacio service';
   }
 
-  async create(createUserDto: CreateUserDto) {
-    return this.userRepository.save(createUserDto);
+  async findOne(id: number) {
+    return this.userRepository.findOne({ where: { id } });
   }
 
-  findOne(id: number) {
-    return this.userRepository.findOne({ where: { id } });
+  async findOneLogin(email: string) {
+    return this.userRepository.findOne({ where: { email } });
+  }
+
+  async create(createUserDto: CreateUserDto) {
+    return this.userRepository.save(createUserDto);
   }
 
   update(id: number, updateUserDto: UpdateUserDto) {

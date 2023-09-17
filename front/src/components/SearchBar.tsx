@@ -1,5 +1,8 @@
 import React, { ChangeEvent, useState } from 'react'
-import { Container, InputGroup, FormControl } from 'react-bootstrap'
+import { Container, InputGroup, FormControl, Button } from 'react-bootstrap'
+
+import styles from '../styles/components/SearchBar.module.css'
+import { Search } from 'react-bootstrap-icons';
 
 interface SearchBarProps {
   onSearch: (keywords: string) => void;
@@ -15,14 +18,14 @@ export const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
   }
 
   return (
-    <Container>
-      <InputGroup className='mb-3'>
+    <Container className={styles.container}>
+      <InputGroup >
         <FormControl
           onChange={handleChange}
           value={keywords}
           placeholder='Search...'
-          className='search-bar'
-        />
+          className={styles.searchInput}
+        /> <Search  className={styles.searchIcon}/>
       </InputGroup>
     </Container>
   )

@@ -47,7 +47,7 @@ export const ProductPage = () => {
         <p>{product.description}</p>
         <p>Preu: {product.price}€</p>
       </Row>
-      <Link to={`/profile/${product.user_id}`}><UserCard user={product.user_id} /></ Link>
+      <Link to={`/user/${product.user_id}`}><UserCard user={product.user_id} /></ Link>
     </Container>
   )
 }

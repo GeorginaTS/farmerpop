@@ -18,3 +18,11 @@
   color: #3e3e3e;
   font-size: 5vh ;
 }
+ul {
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+}
+li {
+  list-style: none;
+}

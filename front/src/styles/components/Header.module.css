@@ -8,3 +8,11 @@
 .logo {
     height: 5vh;
 }
+ul {
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+li {
+    list-style: none;
+  }

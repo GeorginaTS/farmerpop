@@ -12,14 +12,6 @@ body {
   padding: 0;
   margin: 0;
 }
-ul {
-  display:flex;
-  justify-content: space-around;
-  align-items: center;
-}
-li {
-  list-style: none;
-}
 h1 {
   font-size: 2rem;
   color: var(--grey-color);
@@ -38,4 +30,12 @@ a {
   color: inherit; /* blue colors for links too */
   text-decoration: inherit; /* no underline */
 }
-
+.btn {
+  background-color: var(--green-dark);
+  color: var(--grey-color);
+  font-size: 0.7rem;
+  font-weight:600;
+  border: 1px solid var(--green-light);
+  border-radius: 5px;
+  padding:5px;
+}

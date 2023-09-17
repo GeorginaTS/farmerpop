@@ -1,11 +1,11 @@
 
 import { Container, Row } from "react-bootstrap"
-import  styles from '../styles/pages/ProfilePAge.module.css'
+import  styles from '../styles/pages/UserPage.module.css'
 import axios from "axios"
 import { useState, useEffect } from "react"
-import { Link, useParams } from "react-router-dom"
+import { useParams } from "react-router-dom"
 
-export const ProfilePage = () => {
+export const UserPage = () => {
   const { id } = useParams() 
   const [user, setUser] = useState<any>([])
   const [loading, setLoading] = useState(true)
@@ -41,14 +41,20 @@ export const ProfilePage = () => {
     return <div className='error-messages'>Something went wrong: {error}</div>
   }
   return (
+    <>
     <Container className={styles.container}>
-    <Row><h1>El teu perfil {user.name}</h1></Row>
-    <p><b>Aqui podràs:</b></p>  
+      <Row><h1>Pagina de l'usuari {user.name}</h1></Row>
+    
+    <p><b>Aqui podràs veure:</b></p>  
       <ul className={styles.ul}>
-        <li className={styles.li}>modificar les teves dades</li>
-        <li className={styles.li}>modificar els seus productes</li>
+        <li className={styles.li}>la seva localització</li>
+        <li className={styles.li}>els seus productes</li>
         <li className={styles.li}>contactar</li>
+        <li className={styles.li}>valorar</li>
+        <li className={styles.li}>afegir favorits</li>
       </ul>
+    
     </Container>
+    </>
   )
 }
