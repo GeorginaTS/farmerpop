@@ -1,10 +1,9 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
-import { Container, Row } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 import {ProductCard} from '../components/ProductCard'
-
+import style from '../App.module.css'
 import styles from '../styles/pages/HomePage.module.css'
 
 export const HomePage = () => {
@@ -42,11 +41,12 @@ export const HomePage = () => {
   }
 
   return (
-    <Container className={styles.container} ><br></br>
-      <Row>
-        <h2>Troba productes frescos al teu voltant, aqui una llista dels més pròxims</h2>
-      </Row>
-      <Row>
+    <section id='homepage' className={style.container} >
+      <div className={style.content}>
+        <h1>Troba productes frescos al teu voltant, aqui una llista dels més pròxims</h1>
+      
+        <h3>Selector de categories</h3>
+     
       <div className={styles.list}>
         {products.map((product, i) => (
           <div key={i} >
@@ -59,9 +59,9 @@ export const HomePage = () => {
           </div>
         ))}
       </div>
-      </Row>
+     
+      </div>
     
-    
-    </Container>
+    </section>
   )
 }

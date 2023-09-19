@@ -1,6 +1,5 @@
 import React, { ButtonHTMLAttributes, FC } from 'react'
 import Button from 'react-bootstrap/Button'
-import styles from '../App.module.css'
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   text: string;
@@ -12,7 +11,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 export const Button1: FC<ButtonProps> = ({ type, text, icon, onClick, className }) => {
   return (
     <>
-      <Button  className={styles.btn} onClick={onClick} type={type}>
+      <Button  className={className} onClick={onClick} type={type}>
         {text}
         {icon}
       </Button>

@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { Container, Row } from 'react-bootstrap'
+import style from '../App.module.css'
 import styles from '../styles/pages/ProductPage.module.css'
 import { Link, useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
@@ -41,13 +42,14 @@ export const ProductPage = () => {
     return <div className='error-messages'>Something went wrong: {error}</div>
   }
   return (
-    <Container className={styles.container}>
-      <Row>
+    <section id='product' className={style.container}>
+      <div className={style.content}>
         <h2>{product.title}</h2>
+        <img src='https://source.unsplash.com/random/100×100?fruit' className={styles.img}/>
         <p>{product.description}</p>
         <p>Preu: {product.price}€</p>
-      </Row>
-      <Link to={`/user/${product.user_id}`}><UserCard user={product.user_id} /></ Link>
-    </Container>
+            <Link to={`/user/${product.user_id}`}><UserCard user={product.user_id} /></ Link>
+      </div>
+    </section>
   )
 }

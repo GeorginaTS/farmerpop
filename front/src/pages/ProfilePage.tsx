@@ -1,6 +1,7 @@
 
-import { Container, Row } from "react-bootstrap"
 import  styles from '../styles/pages/ProfilePAge.module.css'
+import  style from '../App.module.css'
+
 import axios from "axios"
 import { useState, useEffect } from "react"
 import { Link, useParams } from "react-router-dom"
@@ -41,14 +42,16 @@ export const ProfilePage = () => {
     return <div className='error-messages'>Something went wrong: {error}</div>
   }
   return (
-    <Container className={styles.container}>
-    <Row><h1>El teu perfil {user.name}</h1></Row>
-    <p><b>Aqui podràs:</b></p>  
-      <ul className={styles.ul}>
+    <section id='profile' className={style.container}>
+      <div className={style.content}>
+        <h1>El teu perfil {user.name}</h1>
+        <p><b>Aqui podràs:</b></p>  
+        <ul className={styles.ul}>
         <li className={styles.li}>modificar les teves dades</li>
         <li className={styles.li}>modificar els seus productes</li>
         <li className={styles.li}>contactar</li>
       </ul>
-    </Container>
+      </div>
+    </section>
   )
 }

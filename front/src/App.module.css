@@ -1,4 +1,5 @@
 @import url(./styles/variables.css);
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Lemon&display=swap');
 
 body {
   border: 1px solid blueviolet;
@@ -11,15 +12,27 @@ body {
   scroll-padding-block: none;
   padding: 0;
   margin: 0;
+  list-style: none;
+  font-size: 1rem;
+  border-radius: 1vw;
 }
 h1 {
   font-size: 2rem;
   color: var(--grey-color);
+  font-family: 'Dancing Script', cursive;
+  text-align: center;
 }
 
 p {
-  font-size: 1rem;
+  font-size: 0.8rem;
   color: var(--grey-color);
+}
+span {
+  font-size: 0.7rem;
+  color: var(--grey-color);
+}
+button {
+  cursor: pointer;
 }
 .error-messages{
   margin: 12px;
@@ -30,6 +43,9 @@ a {
   color: inherit; /* blue colors for links too */
   text-decoration: inherit; /* no underline */
 }
+img {
+  border-radius: 1vh;
+}
 .btn {
   background-color: var(--green-dark);
   color: var(--grey-color);
@@ -38,4 +54,31 @@ a {
   border: 1px solid var(--green-light);
   border-radius: 5px;
   padding:5px;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  background-image: url(./assets/img/background.jpg);
+  background-repeat: repeat;
+  background-size: 40vw;
+  height:fit-content;
+}
+.content{
+  background-color: var(--body-bg-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1vw;
+  padding:4vw;
+  width:fit-content;
+  height: fit-content;
+  min-width: 65vw;
+  min-height: 65vh;
+  gap:2vw;
+  margin-top:10vh;
+  margin-bottom:12vh;
 }

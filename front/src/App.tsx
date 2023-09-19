@@ -1,4 +1,4 @@
-import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { Routes, Route, BrowserRouter, useLocation } from "react-router-dom";
 
 //pages
 import { ProfilePage } from "./pages/ProfilePage";
@@ -14,6 +14,7 @@ import { LoginPage } from "./pages/LoginPage";
 import { UserPage } from "./pages/UserPage";
 
 function App() {
+
   return (
     <>
       <BrowserRouter>
@@ -23,7 +24,7 @@ function App() {
           <Route path="/home" element={<HomePage />} />
           <Route path="/search" element={<SearchPage />} />
           <Route path="/signup" element={<SignUpPage />} />
-          <Route path="/signin" element={<LoginPage />} />
+          <Route path="/login" element={<LoginPage />} />
           <Route path="/addproduct" element={<AddProductPage />} />
           <Route path="/profile/:id" element={<ProfilePage />} />
           <Route path="/user/:id" element={<UserPage />} />
@@ -32,6 +33,6 @@ function App() {
         <NavbarBottom />
       </BrowserRouter>
     </>
-  );
+  )
 }
 export default App;
