@@ -1,10 +1,11 @@
 @import url(../variables.css);
 
 .navBottomContainer {
-  background-color: var(--green-dark);
+  background-color: white;
   width: 100%;
   position: fixed;
   bottom: 0;
+  border-top: 1px solid var(--grey-color);
 }
 
 .navContainer { 
@@ -15,7 +16,7 @@
 }
 
 .icon {
-  color: #3e3e3e;
+  color: var(--green-color);
   font-size: 5vh ;
 }
 ul {

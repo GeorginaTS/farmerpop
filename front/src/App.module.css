@@ -63,7 +63,7 @@ img {
   list-style: none;
   background-image: url(./assets/img/background.jpg);
   background-repeat: repeat;
-  background-size: 40vw;
+  background-size: 240px;
   height:fit-content;
 }
 .content{
@@ -74,8 +74,7 @@ img {
   align-items: center;
   border-radius: 1vw;
   padding:4vw;
-  width:fit-content;
-  height: fit-content;
+  width:80vw;
   min-width: 65vw;
   min-height: 65vh;
   gap:2vw;

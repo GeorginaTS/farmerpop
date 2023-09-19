@@ -44,7 +44,7 @@ export const ProductPage = () => {
   return (
     <section id='product' className={style.container}>
       <div className={style.content}>
-        <h2>{product.title}</h2>
+        <h1>{product.title}</h1>
         <img src='https://source.unsplash.com/random/100×100?fruit' className={styles.img}/>
         <p>{product.description}</p>
         <p>Preu: {product.price}€</p>
