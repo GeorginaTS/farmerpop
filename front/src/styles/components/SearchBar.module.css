@@ -10,6 +10,8 @@
     font-size: 1rem;
     border-color: var(--grey-color);
     color: var(--grey-color);
+    margin-bottom: 1vh;
+    margin-top: 1vh;
 }
 .searchIcon {
     color: var(--green-dark);
