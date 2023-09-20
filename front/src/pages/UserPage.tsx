@@ -1,5 +1,6 @@
 
 import { Container, Row } from "react-bootstrap"
+import  style from '../App.module.css'
 import  styles from '../styles/pages/UserPage.module.css'
 import axios from "axios"
 import { useState, useEffect } from "react"
@@ -42,10 +43,10 @@ export const UserPage = () => {
   }
   return (
     <>
-    <Container className={styles.container}>
-      <Row><h1>Pagina de l'usuari {user.name}</h1></Row>
-    
-    <p><b>Aqui podràs veure:</b></p>  
+    <section id='userPage' className={style.container}>
+      <div className={style.content}>
+        <h1>Pagina de l'usuari {user.name}</h1>
+         <p><b>Aqui podràs veure:</b></p>  
       <ul className={styles.ul}>
         <li className={styles.li}>la seva localització</li>
         <li className={styles.li}>els seus productes</li>
@@ -53,8 +54,8 @@ export const UserPage = () => {
         <li className={styles.li}>valorar</li>
         <li className={styles.li}>afegir favorits</li>
       </ul>
-    
-    </Container>
+    </div>
+    </section>
     </>
   )
 }

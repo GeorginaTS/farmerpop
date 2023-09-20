@@ -15,7 +15,7 @@ export const Header = () => {
       </div>
       <div className="signBtns">      
         <Link to='/login'><button className={style.btn}>Entrar</button> </Link>
-        <Link to='/signup'><span> o bé Registra't</span></Link>
+        <Link to='/signup'><button className={style.btn}>Registra't</button></Link>
       </div>
     </nav>
     </section>

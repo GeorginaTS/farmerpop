@@ -1,5 +1,4 @@
-import { Container, Row } from 'react-bootstrap'
-
+import style from '../App.module.css'
 import styles from '../styles/pages/SearchPage.module.css'
 import { SearchBar } from '../components/SearchBar'
 import { useState, useEffect } from 'react'
@@ -52,23 +51,25 @@ export const SearchPage = () => {
     return <div className='error-messages'>Something went wrong: {error}</div>
   }
   return (
-    <Container className={styles.container}>
-    <Row>
+    <section id='searchPage' className={style.container}>
+      <div className={style.content}>
+    <div>
       <SearchBar onSearch={handleSearch} />
-    </Row>
-      
-    <Row>
+    </div>  
+    <div className={style.productGrid}>
         {filteredProducts.map((product, i) => (
-          <div key={i}>
+          <div key={i} id={product.id} className={style.productDiv}>
             <Link to={`/product/${product.id}`}>
               <ProductCard
                 title={product.title}
                 price={product.price}
-              />
+                user_id={product.user_id}
+              /> 
             </Link>
           </div>
         ))}
-      </Row>
-    </Container>
+      </div>
+      </div>
+    </section>
   )
 }

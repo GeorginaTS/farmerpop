@@ -1,18 +1,15 @@
 @import url(../variables.css);
 
 .container{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 70vw;
 }
 .searchInput {
-    width:75vw; 
+    width:70vw; 
     border-radius: 5px;
     height: 4vh;
-    border-color: var(--green-dark);
-    border-style: solid;
-    color: var(--green-dark);
+    font-size: 1rem;
+    border-color: var(--grey-color);
+    color: var(--grey-color);
 }
 .searchIcon {
     color: var(--green-dark);

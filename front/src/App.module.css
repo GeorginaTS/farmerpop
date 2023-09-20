@@ -20,6 +20,7 @@ h1 {
   font-size: 2rem;
   color: var(--grey-color);
   font-family: 'Dancing Script', cursive;
+  font-weight: 900;
   text-align: center;
 }
 
@@ -33,6 +34,7 @@ span {
 }
 button {
   cursor: pointer;
+  padding: 5px;
 }
 .error-messages{
   margin: 12px;
@@ -46,6 +48,10 @@ a {
 img {
   border-radius: 1vh;
 }
+div {
+  margin: 0;
+  padding: 0;
+}
 .btn {
   background-color: var(--green-dark);
   color: var(--grey-color);
@@ -53,7 +59,18 @@ img {
   font-weight:600;
   border: 1px solid var(--green-light);
   border-radius: 5px;
-  padding:5px;
+  margin:1vh 0vh;
+  padding: 1vh 4vh 1vh 4vh;
+}
+.btn2 {
+  background-color: var(--grey-color);
+  color: var(--green-light);
+  font-size: 0.8rem;
+  font-weight:600;
+  border: 1px solid var(--green-light);
+  border-radius: 5px;
+  margin:2vh 0vh;
+  padding: 1vh 6vh 1vh 6vh;
 }
 .container {
   display: flex;
@@ -70,14 +87,48 @@ img {
   background-color: var(--body-bg-color);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   border-radius: 1vw;
-  padding:4vw;
-  width:80vw;
-  min-width: 65vw;
+  padding:2vh 1vw;
+  min-width: 85vw;
   min-height: 65vh;
-  gap:2vw;
   margin-top:10vh;
   margin-bottom:12vh;
+}
+input {
+  width:100%;
+  margin-bottom: 1vh;
+  margin-top: 1vh;
+}
+.input {
+  width:100%;
+  margin-bottom: 1vh;
+  margin-top: 1vh;
+}
+.productGrid { border: 1px solid red;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 1vh;
+  column-gap: 1vw;
+  width: 70vw;
+  justify-content: center;
+  align-items: center;
+}
+.productDiv {
+  border: 1px solid blue;
+  padding: 0;
+}
+
+@media (min-width: 768px) {
+  .productGrid{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  } 
+}
+@media (min-width: 1024px) {
+  .productGrid{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  } 
 }
