@@ -7,7 +7,7 @@ import { useState, useEffect } from 'react'
 import { UserCard } from '../components/UserCard'
 
 export const ProductPage = () => {
-  const { id } = useParams() 
+  const { id } = useParams()
   const [product, setProducts] = useState<any>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
@@ -21,7 +21,7 @@ export const ProductPage = () => {
         }
         console.log(id)
         const response = await axios(config)
-      
+
         setProducts(response.data)
         setLoading(false)
 
@@ -44,11 +44,12 @@ export const ProductPage = () => {
   return (
     <section id='product' className={style.container}>
       <div className={style.content}>
+      {/* <img src='https://source.unsplash.com/random/100×100?fruit' className={styles.img}/> */}
         <h1>{product.title}</h1>
-        <img src='https://source.unsplash.com/random/100×100?fruit' className={styles.img}/>
         <p>{product.description}</p>
         <p>Preu: {product.price}€</p>
-            <Link to={`/user/${product.user_id}`}><UserCard user={product.user_id} /></ Link>
+        <br />
+          <UserCard user={product.user_id} />
       </div>
     </section>
   )

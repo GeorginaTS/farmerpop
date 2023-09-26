@@ -23,7 +23,7 @@
     "@nestjs/jwt": "^10.1.1",
     "@nestjs/mapped-types": "*",
     "@nestjs/platform-express": "^10.0.0",
-    "@nestjs/swagger": "^7.1.11",
+    "@nestjs/swagger": "^7.1.12",
     "@nestjs/typeorm": "^10.0.0",
     "class-validator": "^0.14.0",
     "cors": "^2.8.5",

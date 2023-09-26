@@ -53,7 +53,7 @@ export const LoginPage = () => {
             name="email"
             type="email"
             placeholder="Introdueix el correu eletrònic"
-            className={style.input}
+            className={styles.formInput}
           />
         </Form.Group>
         <Form.Group controlId="formBasicPassword" className='mb-3'>
@@ -66,7 +66,7 @@ export const LoginPage = () => {
             name="password"
             type="password"
             placeholder="Introdueix la contrasenya"
-            id={styles.textField}
+            className={styles.formInput}
           />
         </Form.Group>
         <Button1

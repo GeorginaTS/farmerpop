@@ -1,17 +1,18 @@
 @import url(../variables.css);
 
 .container{
-    width: 70vw;
+    width: 100%;
 }
 .searchInput {
     width:70vw; 
     border-radius: 5px;
-    height: 4vh;
+    height: 3vh;
     font-size: 1rem;
     border-color: var(--grey-color);
     color: var(--grey-color);
     margin-bottom: 1vh;
     margin-top: 1vh;
+    padding: 1vh;
 }
 .searchIcon {
     color: var(--green-dark);

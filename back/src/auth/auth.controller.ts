@@ -1,32 +1,30 @@
-import { Body, Controller, Post, Req, Res } from '@nestjs/common';
+import { Body, Controller, Get, Post } from '@nestjs/common';
 import { AuthService } from './auth.service';
-import { RegisterDto } from './dto/register.dto';
-import { LoginDto } from './dto/login.dto';
-import { Request, Response } from 'express';
+import { GetUserLoginDto } from './dto/get-user-login.dto';
+import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
+import { RegisterUserDto } from './dto/register-user.dto';
+import { VerifyTokenDto } from './dto/verify-token.dto';
 
+@ApiBearerAuth()
+@ApiTags('auth')
 @Controller('auth')
 export class AuthController {
-  constructor(private authService: AuthService) {}
-  @Post('signup')
-  signup(@Body() user: RegisterDto) {
-    return this.authService.register(user);
+  constructor(private readonly authService: AuthService) {}
+
+  @Post('login')
+  async login(@Body() user: GetUserLoginDto) {
+    const response = await this.authService.login(user);
+    return response;
   }
-  @Post('signin')
-  /* 1. response json con el token */
-  async signin(@Body() user: LoginDto) {
-    return this.authService.validateUser(user);
-  }
-  /* 2. response con cookie */
-  // async signin(@Req() req: Request, @Res({ passthrough: true }) res: Response) {
-  //   const { accessToken } = await this.authService.validateUser(req.body);
-  //   res
-  //     .cookie('access_token', accessToken, {
-  //       httpOnly: true,
-  //       secure: false,
-  //       sameSite: 'lax',
-  //       // expires: new Date(Date.now() + 2 * 24 * 60 * 1000),
-  //     })
-  //     .status(200)
-  //     .send({ status: 'ok' });
+  // @Post('signup')
+  // async signup(@Body() user: RegisterUserDto) {
+  //   const response = await this.authService.register(user);
+  //   return response;
+  // }
+
+  // @Post('verify')
+  // async verifyToken(@Body() token: VerifyTokenDto) {
+  //   const response = await this.authService.verifyToken(token);
+  //   return response;
   // }
 }

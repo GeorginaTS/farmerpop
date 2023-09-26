@@ -15,12 +15,13 @@ export class ProductService {
     return this.productRepository.find();
   }
 
-  async create(createProductDto: CreateProductDto) {
-    return this.productRepository.save(createProductDto);
+  async findOne(id: number): Promise<Product> {
+    return this.productRepository.findOne({ where: { id } });
   }
 
-  findOne(id: number) {
-    return this.productRepository.findOne({ where: { id } });
+  create(createProductDto: CreateProductDto) {
+    return `This action creates a product`;
+   // return this.productRepository.save(createProductDto);
   }
 
   update(id: number, updateProductDto: UpdateProductDto) {

@@ -1,6 +1,15 @@
+.container {
+  /* border: 1px solid red; */
+  width:80%;
+}
 .card {
+    font-size: 1.2rem;
     color:var(--green-light); 
-    padding:10px;
+    padding:2vw;
     background-color: var(--grey-color);
     border-radius: 5px;
+  }
+  .locationText{
+    color: white;
+    font-size: 1rem;
   }

@@ -3,7 +3,9 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { Button, Card } from 'react-bootstrap'
 
+import style  from '../App.module.css'
 import styles from '../styles/components/UserCard.module.css'
+import { Link } from 'react-router-dom'
 
 export interface UserCardProps {
     user: number,
@@ -44,11 +46,13 @@ export const UserCard = ({ user }: UserCardProps) => {
     return <div className='error-messages'>Something went wrong: {error}</div>
   }
   return (
+    <section id='userCard' className={styles.container}>    
     <Card className={styles.card}>  
-    {userDetail.name}    
+    {userDetail.name}  <p className={styles.locationText}> {userDetail.location} </p>
    <hr />
-    <Button>Contactar</Button>
+   <Link to={`/user/${userDetail.id}`}><button className={style.btn}>Contactar</button></Link>
     
-  </ Card>
+    </ Card>
+  </section>
   )
 }

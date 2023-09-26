@@ -42,7 +42,7 @@ export const HomePage = () => {
   return (
     <section id="homePage" className={style.container}>
       <div className={style.content}>
-        <h1>Productes frescos de les mans dels teus veïns. <br />Anima't a menjar sa i de proximitat</h1>
+        <h1>Productes frescos <br />de la mà dels teus veïns. <br />Anima't a menjar sa i de proximitat</h1>
         <div className={style.productGrid}>
           {products.map((product, i) => (
             <div key={i} id={product.id} className={style.productDiv}>

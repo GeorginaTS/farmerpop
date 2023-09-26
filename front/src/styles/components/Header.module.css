@@ -15,7 +15,6 @@ nav {
     border-bottom: 1px solid var(--grey-color);
 }
 .logo {
-    border: 1px solid var(--green-dark);
     max-width: 25vh;
 }
 

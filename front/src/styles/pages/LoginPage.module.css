@@ -9,7 +9,15 @@
     height: 50vh;
     gap:2vw;
 }
+.formInput {
+    font-size: 0.8rem;
+    min-width: 50vw;
+    height: 1.5rem;
+    border-radius: 1vw;
+    padding: 1vh;
+}
 .formLabel {
     font-size: 0.8rem;
+    margin:3vh 0vw 1vh 0vw;
 
 }
