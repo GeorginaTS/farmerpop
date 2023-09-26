@@ -1,13 +1,11 @@
 .formBox {
-    background-color: white;
+    border: 1px solid rebeccapurple;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding:4vw;
-    width:70vw;
-    height: 50vh;
-    gap:2vw;
+    width: 70vw;
 }
 .formInput {
     font-size: 0.8rem;

@@ -12,6 +12,7 @@ import { SearchPage } from "./pages/SearchPage";
 import { SignUpPage } from "./pages/SignUpPage";
 import { LoginPage } from "./pages/LoginPage";
 import { UserPage } from "./pages/UserPage";
+import { RegisterPage } from "./pages/RegisterPage";
 
 function App() {
 
@@ -23,7 +24,7 @@ function App() {
           <Route path="/" element={<LandingPage />} />
           <Route path="/home" element={<HomePage />} />
           <Route path="/search" element={<SearchPage />} />
-          <Route path="/signup" element={<SignUpPage />} />
+          <Route path="/register" element={<RegisterPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/addproduct" element={<AddProductPage />} />
           <Route path="/profile/:id" element={<ProfilePage />} />
