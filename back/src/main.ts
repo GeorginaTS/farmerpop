@@ -4,10 +4,10 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  
+
   // *** Configuración SWAGGER
   const config = new DocumentBuilder()
-    .setTitle('Estraperloww')
+    .setTitle('Straperloww')
     .setDescription('Estraperlo Api')
     .setVersion('1.0')
     .build();

@@ -19,14 +19,18 @@ export class UserController {
   findAll() {
     return this.userService.findAll();
   }
+  @Get('hola')
+  findByEmail(@Body() email: string) {
+    return this.userService.findOneLogin(email);
+  }
 
   @Get(':id')
   findOne(@Param('id') id: number) {
-    return this.userService.findOne(id);
+    return this.userService.findOne(+id);
   }
 
   @Get('login')
-  findOneLogin(@Param('email') email: string) {
+  findOneByEmail(@Body() email: string) {
     return this.userService.findOneLogin(email);
   }
 
@@ -36,7 +40,7 @@ export class UserController {
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {
+  update(@Param('id') id: number, @Body() updateUserDto: UpdateUserDto) {
     return this.userService.update(+id, updateUserDto);
   }
 

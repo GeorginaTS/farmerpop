@@ -13,6 +13,7 @@ import { SignUpPage } from "./pages/SignUpPage";
 import { LoginPage } from "./pages/LoginPage";
 import { UserPage } from "./pages/UserPage";
 import { RegisterPage } from "./pages/RegisterPage";
+import { MapPage } from "./pages/MapPage";
 
 function App() {
 
@@ -23,7 +24,7 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/home" element={<HomePage />} />
-          <Route path="/search" element={<SearchPage />} />
+          <Route path="/map" element={<MapPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/addproduct" element={<AddProductPage />} />

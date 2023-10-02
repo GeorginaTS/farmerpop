@@ -48,7 +48,7 @@ export const UserPage = () => {
         <h1>Pagina de l'usuari {user.name}</h1>
          <p><b>Aqui podràs veure:</b></p>  
       <ul className={styles.ul}>
-        <li className={styles.li}>la seva localització</li>
+        <li className={styles.li}>la seva localització <b>{user.location}</b></li>
         <li className={styles.li}>els seus productes</li>
         <li className={styles.li}>contactar</li>
         <li className={styles.li}>valorar</li>

@@ -11,6 +11,7 @@
     "test": "vitest --ui"
   },
   "dependencies": {
+    "@googlemaps/react-wrapper": "^1.1.35",
     "@testing-library/jest-dom": "^6.1.3",
     "@testing-library/react": "^14.0.0",
     "bootstrap": "^5.3.1",
@@ -21,6 +22,7 @@
     "react-router-dom": "^6.15.0"
   },
   "devDependencies": {
+    "@types/google.maps": "^3.54.1",
     "@types/jest": "^29.5.5",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",

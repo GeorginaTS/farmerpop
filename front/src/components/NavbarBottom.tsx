@@ -1,5 +1,5 @@
 import Nav from 'react-bootstrap/Nav'
-import { HouseDoorFill, PersonCircle, PlusCircleFill, Search } from 'react-bootstrap-icons'
+import { HouseDoorFill, PersonCircle, PinMapFill, PlusCircleFill, Search } from 'react-bootstrap-icons'
 import  styles from '../styles/components/NavbarBottom.module.css'
 
 export const NavbarBottom = () => {
@@ -13,8 +13,8 @@ export const NavbarBottom = () => {
         </Nav.Item>
 
         <Nav.Item as='li'>
-          <Nav.Link href='/search'>
-            <Search className={styles.icon} />
+          <Nav.Link href='/map'>
+            <PinMapFill className={styles.icon} />
           </Nav.Link>
         </Nav.Item>
 

@@ -1,9 +1,8 @@
 import { describe, test, expect, beforeEach } from 'vitest'
 import { render} from '@testing-library/react'
-import { BrowserRouter } from 'react-router-dom'
-import { ProductCard } from '../../src/components/ProductCard'
+import { BrowserRouter, Link } from 'react-router-dom'
 import { LandingPage } from '../../src/pages/LandingPage'
-import { Container } from 'react-bootstrap'
+
 
 
 describe('LANDING PAGE', () => {
@@ -16,11 +15,11 @@ describe('LANDING PAGE', () => {
     })
 
     // test('renders title', () => {
-    //     const title = screen.getByText(/productes frescos/i)
-    //     expect(title).toBeInTheDocument()
+    //      const title = screen.getByText(/productes frescos/i)
+    //      expect(title).toBeInTheDocument()
     // })
-    test('Component Container mounts properly', () => {
-        const wrapper = render(<Container />)
+    test('Component Link to home mounts properly', () => {
+        const wrapper = render(<Link to={'/home'} />)
         expect(wrapper).toBeTruthy()
       })
   })

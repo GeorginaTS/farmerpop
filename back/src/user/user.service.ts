@@ -19,20 +19,29 @@ export class UserService {
     return this.userRepository.findOne({ where: { id } });
   }
 
-  findOneLogin(email: string) {
-    //return this.userRepository.findOne({ where: { email } });
-    return `This action return user with email:  ${email}`;
+  async findOneLogin(email: string) {
+    try {
+      const result = await this.userRepository.findBy({
+        //where: { email: email },
+        email: email,
+      });
+      return result;
+    } catch (error) {
+      throw error;
+    }
   }
 
-  create(createUserDto: CreateUserDto) {
-    return this.userRepository.save(createUserDto);
+  async create(createUserDto: CreateUserDto) {
+    return await this.userRepository.save(createUserDto);
   }
 
-  update(id: number, updateUserDto: UpdateUserDto) {
-    return `This action updates a #${id} user`;
+  async update(id: number, updateUserDto: UpdateUserDto) {
+    const toUpdate = await this.userRepository.findOne({ where: { id } });
+    const updated = Object.assign(toUpdate, updateUserDto);
+    return await this.userRepository.save(updated);
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} user`;
+  async remove(id: number) {
+    return await this.userRepository.delete(id);
   }
 }

@@ -47,7 +47,7 @@ export const ProfilePage = () => {
         <h1>El teu perfil {user.name}</h1>
         <p><b>Aqui podràs:</b></p>  
         <ul className={styles.ul}>
-        <li className={styles.li}>modificar les teves dades</li>
+        <li className={styles.li}>modificar les teves dades<br /> <p>{user.email} - {user.location}</p></li>
         <li className={styles.li}>modificar els seus productes</li>
         <li className={styles.li}>contactar</li>
       </ul>

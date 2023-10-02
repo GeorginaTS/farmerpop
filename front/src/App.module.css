@@ -128,7 +128,14 @@ div {
 .geolocation {
   border: 1px solid firebrick;
   background-color: antiquewhite;
-  font-size: 0.8rem;
+  font-size: 0.6rem;
+  text-align: center;
+  padding: 1vw;
+}
+.map {
+  border:1px solid goldenrod;
+  width:400px;
+  height: 400px;
 }
 
 @media (min-width: 768px) {

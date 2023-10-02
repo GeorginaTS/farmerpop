@@ -1,26 +1,47 @@
 
-import { useGeolocated } from "react-geolocated";
-import styles from '../App.module.css';
+import styles from "../App.module.css";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { LocationDetail } from "./LocationDetail";
 
 export const MyLocation = () => {
-    const { coords, isGeolocationAvailable, isGeolocationEnabled } =
-        useGeolocated({
-            positionOptions: {
-                enableHighAccuracy: true,
-            },
-            userDecisionTimeout: 5000,
-        });
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [myLocation, setMyLocation] = useState({lat:"", lng:""});
 
-    return !isGeolocationAvailable ? (
-        <div>Your browser does not support Geolocation</div>
-    ) : !isGeolocationEnabled ? (
-        <div>Geolocation is not enabled</div>
-    ) : coords ? (
-        <section id='geolocation' className={styles.geolocation}>
-            <div>latitude: {coords.latitude}<br />longitude: {coords.longitude}</div>
-        </section>
-    ) : (
-        <div>Getting the location data&hellip; </div>
-    );
+   useEffect(() => {
+     const fetchLocation = async () => {
+       try {
+        //console.log(`env: ${import.meta.env.VITE_GOOGLE_API_KEY} `)
+        const config = {
+        url:`https://www.googleapis.com/geolocation/v1/geolocate?key= ${import.meta.env.VITE_GOOGLE_API_KEY}`,
+        method: "POST"
+       };
+         const response = await axios(config);
+         //console.log(response.data.location)
+         setMyLocation(response.data.location);
+         setLoading(false);
+       } catch (error) {
+         setError("Failed to connect to server :(");
+         setLoading(false);
+       }
+     };
+     fetchLocation();
+   }, []);
+
+   if (loading) {
+     return <div className="error-messages">Loading...</div>;
+   }
+
+    console.log(`My Location: ${myLocation.lat},  ${myLocation.lng} to detail Component`)
+  return !error && !loading? (
+    <>
+      <div className={styles.geolocation}>
+        {myLocation.lat} - {myLocation.lng}
+        <LocationDetail lat={myLocation.lat} lng={myLocation.lng}/>
+      </div>
+    </>
+  ) : (
+    error
+  );
 };
-
