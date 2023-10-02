@@ -15,10 +15,14 @@ describe('HOMEPAGE', () => {
       )
     })
 
-    // test('renders title', () => {
-    //     const title = screen.getByText(/productes frescos/i)
-    //     expect(title).toBeInTheDocument()
-    // })
+    test(' title appears', async () => {
+      // element is initially not present...
+      // wait for appearance inside an assertion
+      await waitFor(() => {
+        const text = screen.getByText("Anima't", {exact:false})
+        expect(text).toBeInTheDocument()
+      })
+    })
     test('Component SearchBar  mounts properly', () => {
       const wrapper = render(<SearchBar onSearch={function (keywords: string): void {
         throw new Error('Function not implemented.')
@@ -26,11 +30,11 @@ describe('HOMEPAGE', () => {
       expect(wrapper).toBeTruthy()
     })
     test('Component Link to product mounts properly', () => {
-      const wrapper = render(<Link to={'/product'} />)
+      const wrapper = render(<BrowserRouter><Link to={'/product'} /></BrowserRouter>)
       expect(wrapper).toBeTruthy()
     })
     test('Component ProductCard mounts properly', () => {
-        const wrapper = render(<ProductCard title={''} price={0} user_id={1}/>)
+        const wrapper = render(<ProductCard title={'Straperlowww product'} price={0} user_id={1}/>)
         expect(wrapper).toBeTruthy()
       })
   })

@@ -15,8 +15,14 @@ describe('LANDING PAGE', () => {
       )
     })
 
-    test('Component Form mounts properly', () => {
-        const input = screen.getByLabelText('Correu electrònic')
+    test('Contain title contrasenya', () => {
+      
+        const text =screen.getByText('Contrasenya:')
+        expect(text).toBeInTheDocument()
     })
+    test('Contain text Correu electrònic', () => {
+      const text = screen.getByText('Correu electrònic:')
+      expect(text).toBeInTheDocument()
+  })
 
   })
