@@ -10,6 +10,7 @@ import {
 import { UserService } from './user.service';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { CreateUserDto } from './dto/create-user.dto';
+import { LoginUserDto } from './dto/login-user.dto';
 
 @Controller('user')
 export class UserController {
@@ -19,19 +20,15 @@ export class UserController {
   findAll() {
     return this.userService.findAll();
   }
-  @Get('hola')
-  findByEmail(@Body() email: string) {
-    return this.userService.findOneLogin(email);
+
+  @Post('login')
+  Login(@Body() loginUserDto: LoginUserDto) {
+    return this.userService.login(loginUserDto);
   }
 
   @Get(':id')
   findOne(@Param('id') id: number) {
     return this.userService.findOne(+id);
-  }
-
-  @Get('login')
-  findOneByEmail(@Body() email: string) {
-    return this.userService.findOneLogin(email);
   }
 
   @Post()

@@ -3,6 +3,7 @@ import styles from "../App.module.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { LocationDetail } from "./LocationDetail";
+import { GeoAltFill } from "react-bootstrap-icons";
 
 export const MyLocation = () => {
   const [error, setError] = useState<string | null>(null);
@@ -36,10 +37,13 @@ export const MyLocation = () => {
     console.log(`My Location: ${myLocation.lat},  ${myLocation.lng} to detail Component`)
   return !error && !loading? (
     <>
-      <div className={styles.geolocation}>
+    <section id='my-location' className={styles.mylocation}>
+      <GeoAltFill />
+      <div className={styles.geolocation}>  
         {myLocation.lat} - {myLocation.lng}
         <LocationDetail lat={myLocation.lat} lng={myLocation.lng}/>
       </div>
+      </section>
     </>
   ) : (
     error
