@@ -12,6 +12,7 @@ import { AuthService } from './auth.service';
 import { LoginUserDto } from './dto/login-auth.dto';
 import { AuthGuard } from './auth.guard';
 import { CreateUserDto } from 'src/user/dto/create-user.dto';
+import { VerifyTokenDto } from './dto/verify-token.dto';
 
 @Controller('auth')
 export class AuthController {
@@ -27,7 +28,10 @@ export class AuthController {
     const response = this.authService.register(user);
     return response;
   }
-
+  @Post('verify')
+  async verifyToken(@Body() token: VerifyTokenDto) {
+    return this.authService.verifyToken(token);
+  }
   @UseGuards(AuthGuard)
   @Get('profile')
   getProfile(@Request() req) {
