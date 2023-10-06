@@ -1,4 +1,5 @@
 import {
+  HttpException,
   HttpStatus,
   Injectable,
   InternalServerErrorException,
@@ -23,12 +24,17 @@ export class AuthService {
     const password = loginUserDto.password;
     try {
       const findUser = await this.userService.findOneLogin(email);
+      if (!findUser)
+        throw new HttpException('USER_NOT_FOUND', HttpStatus.NOT_FOUND);
+
       console.log(`Usuario encontrado ${findUser[0].email}`);
-      if (password !== findUser[0].password) {
-        throw new UnauthorizedException();
-      } else {
-        console.log('Password error');
-      }
+      const checkPassword = await this.passwordVerify(
+        password,
+        findUser[0].password,
+      );
+
+      if (!checkPassword)
+        throw new HttpException('INCORRECT_PASSWORD', HttpStatus.FORBIDDEN);
 
       const payload = { sub: findUser[0].id, email: findUser[0].email };
       const token = await this.jwtService.signAsync(payload, {
@@ -73,7 +79,7 @@ export class AuthService {
       throw new InternalServerErrorException();
     }
   }
-
+  
   async passwordVerify(password: string, hash: string) {
     return await compare(password, hash);
   }
