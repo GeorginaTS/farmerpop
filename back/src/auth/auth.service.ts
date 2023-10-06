@@ -23,14 +23,14 @@ export class AuthService {
     const password = loginUserDto.password;
     try {
       const findUser = await this.userService.findOneLogin(email);
-      console.log(`Usuario encontrado ${findUser.email}`);
-      if (password !== findUser.password) {
+      console.log(`Usuario encontrado ${findUser[0].email}`);
+      if (password !== findUser[0].password) {
         throw new UnauthorizedException();
       } else {
         console.log('Password error');
       }
 
-      const payload = { sub: findUser.id, email: findUser.email };
+      const payload = { sub: findUser[0].id, email: findUser[0].email };
       const token = await this.jwtService.signAsync(payload, {
         expiresIn: '1d',
       });
@@ -51,6 +51,7 @@ export class AuthService {
   async register(user: CreateUserDto) {
     const { password } = user;
     const hashPassword = await hash(password, 10);
+    console.log(hashPassword);
     user = { ...user, password: hashPassword };
     return this.userService.create(user);
   }

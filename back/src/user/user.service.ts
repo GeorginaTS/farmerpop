@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { CreateUserDto } from './dto/create-user.dto';
 import { User } from './entities/user.entity';
 import { InjectRepository } from '@nestjs/typeorm';
@@ -23,7 +23,7 @@ export class UserService {
   async findOneLogin(email: string) {
     try {
       console.log(email);
-      const result = await this.userRepository.findOne({
+      const result = await this.userRepository.find({
         where: { email: email },
       });
       console.log(result);
@@ -34,7 +34,18 @@ export class UserService {
   }
 
   async create(createUserDto: CreateUserDto) {
-    return await this.userRepository.save(createUserDto);
+    const findUser = await this.findOneLogin(createUserDto.email);
+    if (findUser.length === 1) {
+      throw new HttpException('USER_ALREADY_EXIST', 403);
+    } else {
+      const createdUser = await this.userRepository.save(createUserDto);
+      console.log(createdUser);
+      return {
+        message: 'Created User success.',
+        status: HttpStatus.OK,
+        data: createdUser,
+      };
+    }
   }
 
   async update(id: number, updateUserDto: UpdateUserDto) {
