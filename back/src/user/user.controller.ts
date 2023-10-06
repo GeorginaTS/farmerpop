@@ -21,11 +21,6 @@ export class UserController {
     return this.userService.findAll();
   }
 
-  @Post('login')
-  Login(@Body() loginUserDto: LoginUserDto) {
-    return this.userService.login(loginUserDto);
-  }
-
   @Get(':id')
   findOne(@Param('id') id: number) {
     return this.userService.findOne(+id);

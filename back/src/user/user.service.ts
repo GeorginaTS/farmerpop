@@ -20,29 +20,14 @@ export class UserService {
     return this.userRepository.findOne({ where: { id } });
   }
 
-  async login(loginUserDto: LoginUserDto) {
-    try {
-      console.log(
-        ` email loginUserDto ${loginUserDto.email} -- ${loginUserDto.password}`,
-      );
-      const toLogin = await this.userRepository.findOne({
-        where: { email: loginUserDto.email },
-      });
-      console.log(`user con email : ${toLogin.email}`);
-      return toLogin;
-    } catch (error) {
-      throw error;
-    }
-  }
-
   async findOneLogin(email: string) {
     try {
       console.log(email);
-      // const result = await this.userRepository.find({
-      //   where: { email: email },
-      // });
-      //console.log(result);
-      //return result;
+      const result = await this.userRepository.findOne({
+        where: { email: email },
+      });
+      console.log(result);
+      return result;
     } catch (error) {
       throw error;
     }
